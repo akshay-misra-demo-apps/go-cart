@@ -21,7 +21,7 @@ func GenerateTokenWithRefresh(email string,
 		Uid:       uid,
 		UserType:  userType,
 		MapClaims: jwt.MapClaims{
-			"exp": time.Now().Local().Add(time.Second * time.Duration(30)).Unix(),
+			"exp": time.Now().Local().Add(time.Minute * time.Duration(60)).Unix(),
 			"iat": time.Now().Local().Unix(),
 			"iss": "go-cart-auth",
 			"sub": email,
@@ -30,7 +30,7 @@ func GenerateTokenWithRefresh(email string,
 
 	refreshClaims := &models.SignedDetails{
 		MapClaims: jwt.MapClaims{
-			"exp": time.Now().Local().Add(time.Minute * time.Duration(5)).Unix(),
+			"exp": time.Now().Local().Add(time.Hour * time.Duration(5)).Unix(),
 		},
 	}
 
