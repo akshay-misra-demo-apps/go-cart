@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  hazelcast:
+    image: hazelcast/hazelcast:5.3.2
+    ports:
+      - "5701:5701"
+
+  management-center:
+    image: hazelcast/management-center:5.0
+    environment:
+      - MC_CLUSTER_MEMBERS=hzl
+    ports:
+      - "8080:8080"
+    depends_on:
+      - hazelcast
