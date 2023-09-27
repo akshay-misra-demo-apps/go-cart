@@ -3,11 +3,11 @@ package main
 import (
 	"log"
 
-	"github.com/akshay-misra-demo-apps/go-cart/controllers"
-	"github.com/akshay-misra-demo-apps/go-cart/middlewares"
-	"github.com/akshay-misra-demo-apps/go-cart/repositories"
-	"github.com/akshay-misra-demo-apps/go-cart/routes"
-	"github.com/akshay-misra-demo-apps/go-cart/services"
+	"github.com/akshay-misra-demo-apps/go-cart/user-management/controllers"
+	"github.com/akshay-misra-demo-apps/go-cart/user-management/middlewares"
+	"github.com/akshay-misra-demo-apps/go-cart/user-management/repositories"
+	"github.com/akshay-misra-demo-apps/go-cart/user-management/routes"
+	"github.com/akshay-misra-demo-apps/go-cart/user-management/services"
 	"github.com/gin-gonic/gin"
 )
 

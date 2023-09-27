@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github.com/akshay-misra-demo-apps/go-cart/controllers"
+	"github.com/akshay-misra-demo-apps/go-cart/user-management/controllers"
 	"github.com/gin-gonic/gin"
 )
 

@@ -1,4 +1,4 @@
-module github.com/akshay-misra-demo-apps/go-cart
+module github.com/akshay-misra-demo-apps/go-cart/user-management
 
 go 1.21
 

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/akshay-misra-demo-apps/go-cart/interfaces"
-	"github.com/akshay-misra-demo-apps/go-cart/models"
+	"github.com/akshay-misra-demo-apps/go-cart/user-management/interfaces"
+	"github.com/akshay-misra-demo-apps/go-cart/user-management/models"
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )

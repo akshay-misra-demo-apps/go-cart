@@ -3,7 +3,7 @@ package repositories
 import (
 	"log"
 
-	"github.com/akshay-misra-demo-apps/go-cart/database"
+	"github.com/akshay-misra-demo-apps/go-cart/user-management/database"
 )
 
 const ConnectionURL = "mongodb+srv://userone:L2ORM855sl5XzunU@cluster0.9eqsnyg.mongodb.net"

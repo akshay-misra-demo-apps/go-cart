@@ -1,7 +1,7 @@
 package interfaces
 
 import (
-	"github.com/akshay-misra-demo-apps/go-cart/models"
+	"github.com/akshay-misra-demo-apps/go-cart/user-management/models"
 )
 
 type IUser interface {

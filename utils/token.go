@@ -5,8 +5,8 @@ import (
 	"log"
 	"time"
 
-	"github.com/akshay-misra-demo-apps/go-cart/constants"
-	"github.com/akshay-misra-demo-apps/go-cart/models"
+	"github.com/akshay-misra-demo-apps/go-cart/user-management/constants"
+	"github.com/akshay-misra-demo-apps/go-cart/user-management/models"
 	"github.com/golang-jwt/jwt/v5"
 )
 
