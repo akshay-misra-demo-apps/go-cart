@@ -35,7 +35,7 @@ func App() {
 
 	routes.AuthorizedProductRoutes(productGroup, productController)
 
-	if err := server.Run(":4000"); err != nil {
+	if err := server.Run(":4100"); err != nil {
 		log.Fatalf("error while creating http server %v", err.Error())
 	}
 }
