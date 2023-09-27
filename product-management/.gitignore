@@ -8,6 +8,8 @@
 *.so
 *.dylib
 
+product-management
+
 .idea/
 
 # Test binary, built with `go test -c`
