@@ -1,7 +1,7 @@
 package repositories
 
 import (
-	"github.com/akshay-misra-demo-apps/go-cart/user-management/database"
+	"github.com/akshay-misra-demo-apps/go-cart/product-management/database"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 

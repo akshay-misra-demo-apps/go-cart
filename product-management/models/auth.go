@@ -50,12 +50,3 @@ type AuthRequest struct {
 	Username string `json:"username" binding:"required"`
 	Password string `json:"password" binding:"required"`
 }
-
-type Auth struct {
-	Token        string `json:"username"`
-	RefreshToken string `json:"username"`
-	Id           string
-	Username     string
-	// Change to enum
-	Status string
-}

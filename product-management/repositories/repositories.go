@@ -3,7 +3,7 @@ package repositories
 import (
 	"log"
 
-	"github.com/akshay-misra-demo-apps/go-cart/user-management/database"
+	"github.com/akshay-misra-demo-apps/go-cart/product-management/database"
 )
 
 const ConnectionURL = "mongodb+srv://userone:L2ORM855sl5XzunU@cluster0.9eqsnyg.mongodb.net"
@@ -28,7 +28,6 @@ func Init() {
 	}
 
 	initProductRepo(connection)
-	initUserRepo(connection)
 }
 
 func Get() Repositories {

@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/akshay-misra-demo-apps/go-cart/user-management/interfaces"
-	"github.com/akshay-misra-demo-apps/go-cart/user-management/models"
-	"github.com/akshay-misra-demo-apps/go-cart/user-management/repositories"
+	"github.com/akshay-misra-demo-apps/go-cart/product-management/interfaces"
+	"github.com/akshay-misra-demo-apps/go-cart/product-management/models"
+	"github.com/akshay-misra-demo-apps/go-cart/product-management/repositories"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"

@@ -3,11 +3,11 @@ package main
 import (
 	"log"
 
-	"github.com/akshay-misra-demo-apps/go-cart/user-management/controllers"
-	"github.com/akshay-misra-demo-apps/go-cart/user-management/middlewares"
-	"github.com/akshay-misra-demo-apps/go-cart/user-management/repositories"
-	"github.com/akshay-misra-demo-apps/go-cart/user-management/routes"
-	"github.com/akshay-misra-demo-apps/go-cart/user-management/services"
+	"github.com/akshay-misra-demo-apps/go-cart/product-management/controllers"
+	"github.com/akshay-misra-demo-apps/go-cart/product-management/middlewares"
+	"github.com/akshay-misra-demo-apps/go-cart/product-management/repositories"
+	"github.com/akshay-misra-demo-apps/go-cart/product-management/routes"
+	"github.com/akshay-misra-demo-apps/go-cart/product-management/services"
 	"github.com/gin-gonic/gin"
 )
 
@@ -22,17 +22,10 @@ func App() {
 	server := gin.Default()
 	server.GET("/", home)
 
-	userRepository := repositories.Get()["user"]
-	userService := services.GetUserService(userRepository)
-	userController := controllers.GetUserController(userService)
-
-	routes.NoAuthRoutes(server, userController)
-
 	// Authenticate all below routes
 	server.Use(middlewares.Authenticate())
 	// Authorize all below routes
 	server.Use(middlewares.Authorize())
-	routes.UserRoutes(server, userController)
 
 	productRepository := repositories.Get()["product"]
 	productService := services.GetProductService(productRepository)

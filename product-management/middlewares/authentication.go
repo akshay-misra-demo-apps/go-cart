@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/akshay-misra-demo-apps/go-cart/user-management/utils"
+	"github.com/akshay-misra-demo-apps/go-cart/product-management/utils"
 	"github.com/gin-gonic/gin"
 )
 
