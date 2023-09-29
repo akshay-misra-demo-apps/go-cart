@@ -1,7 +1,7 @@
 # Define variables
 DOCKER_HARBOR = docker.io
 DOCKER_USER = akshaymisra24
-DOCKER_REPO = go-cart-product-management
+DOCKER_REPO = go-cart-order-management
 DOCKER_IMAGE_TAG = 0.1.0
 
 # Target to build golang code
@@ -23,7 +23,7 @@ test:
 
 .PHONY: proto
 proto:
-	 protoc --go_out=./api --go-grpc_out=./api api/proto/product.proto
+	protoc --go_out=./api --go-grpc_out=./api  api/proto/product.proto  api/proto/cart.proto  api/proto/order.proto
 
 # Target to build the Docker image
 .PHONY: docker_build
@@ -43,7 +43,7 @@ docker_build_push: docker_build docker_push
 # Target to run the Docker image
 .PHONY: docker_run
 docker_run:
-	docker run -d -p 4200:4200 $(DOCKER_USER)/$(DOCKER_REPO):$(DOCKER_IMAGE_TAG)
+	docker run -d -p 4300:4300 $(DOCKER_USER)/$(DOCKER_REPO):$(DOCKER_IMAGE_TAG)
 
 # Target to build and run the Docker container
 .PHONY: docker_build_run

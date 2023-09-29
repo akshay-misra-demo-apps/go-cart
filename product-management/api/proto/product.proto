@@ -1,0 +1,71 @@
+syntax = "proto3";
+option go_package = "./pb";
+package product;
+
+message ProductRelationship {
+  string id = 1;
+  // Type can be 'dependOn', 'bundle' or 'suggestion'
+  string type = 2;
+}
+
+message Product {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string base_price = 4;
+  string category = 5;
+  string image_url = 6;
+  int32 version = 7;
+  repeated string tags = 8;
+  repeated ProductRelationship relationships = 9;
+}
+
+message ProductID {
+  string id = 1;
+}
+
+message SearchRequest {
+  string query = 1;
+}
+
+message ProductList {
+  repeated Product products = 1;
+}
+
+message CreateProductResponse {
+  Product product = 1;
+}
+
+message ReadProductResponse {
+  Product product = 1;
+}
+
+message UpdateProductResponse {
+  Product product = 1;
+}
+
+message DeleteProductResponse {
+  bool success = 1;
+}
+
+message SearchProductsResponse {
+  ProductList products = 1;
+}
+
+message ReadAllProductsResponse {
+  ProductList products = 1;
+}
+
+service ProductService {
+  rpc CreateProduct (Product) returns (CreateProductResponse);
+  rpc ReadProduct (ProductID) returns (ReadProductResponse);
+  rpc UpdateProduct (Product) returns (UpdateProductResponse);
+  rpc DeleteProduct (ProductID) returns (DeleteProductResponse);
+  rpc SearchProducts (SearchRequest) returns (SearchProductsResponse);
+  rpc ReadAllProducts (ReadAllProductsRequest) returns (ReadAllProductsResponse);
+}
+
+message ReadAllProductsRequest {
+  int32 limit = 1;
+  string sort = 2;
+}

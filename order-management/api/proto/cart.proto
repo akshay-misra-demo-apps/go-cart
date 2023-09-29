@@ -1,0 +1,79 @@
+syntax = "proto3";
+option go_package = "./pb";
+package cart;
+
+import "api/proto/product.proto";
+
+message Cart {
+  string id = 1;
+  string user_id = 2;
+  string order_id = 3;
+  repeated product.Product items = 4;
+  int32 quantity = 5;
+  string total_price = 6;
+  string total_tax = 7;
+  string coupon_code = 8;
+}
+
+message CartID {
+  string id = 1;
+}
+
+message CreateCartRequest {
+  Cart cart = 1;
+}
+
+message CreateCartResponse {
+  Cart cart = 1;
+}
+
+message ReadCartRequest {
+  CartID cart_id = 1;
+}
+
+message ReadCartResponse {
+  Cart cart = 1;
+}
+
+message UpdateCartRequest {
+  Cart cart = 1;
+}
+
+message UpdateCartResponse {
+  Cart cart = 1;
+}
+
+message DeleteCartRequest {
+  CartID cart_id = 1;
+}
+
+message DeleteCartResponse {
+  bool success = 1;
+}
+
+message AddProductToCartRequest {
+  CartID cart_id = 1;
+  product.Product product = 2;
+}
+
+message AddProductToCartResponse {
+  Cart cart = 1;
+}
+
+message RemoveProductFromCartRequest {
+  CartID cart_id = 1;
+  string product_id = 2;
+}
+
+message RemoveProductFromCartResponse {
+  Cart cart = 1;
+}
+
+service CartService {
+  rpc CreateCart (CreateCartRequest) returns (CreateCartResponse);
+  rpc ReadCart (ReadCartRequest) returns (ReadCartResponse);
+  rpc UpdateCart (UpdateCartRequest) returns (UpdateCartResponse);
+  rpc DeleteCart (DeleteCartRequest) returns (DeleteCartResponse);
+  rpc AddProductToCart (AddProductToCartRequest) returns (AddProductToCartResponse);
+  rpc RemoveProductFromCart (RemoveProductFromCartRequest) returns (RemoveProductFromCartResponse);
+}

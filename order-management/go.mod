@@ -1,4 +1,4 @@
-module github.com/akshay-misra-demo-apps/go-cart/product-management
+module github.com/akshay-misra-demo-apps/go-cart/order-management
 
 go 1.21
 
