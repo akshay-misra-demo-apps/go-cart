@@ -31,7 +31,7 @@ func (u UserController) Register(c *gin.Context) {
 	created, err := u.Service.Register(&user)
 	if err != nil {
 		c.JSON(500, gin.H{
-			"message": fmt.Sprintf("internal service error: %v", err.Error()),
+			"message": fmt.Sprintf("internal server error: %v", err.Error()),
 		})
 		return
 	}
@@ -60,7 +60,7 @@ func (u UserController) Login(c *gin.Context) {
 		})
 	} else {
 		c.JSON(500, gin.H{
-			"message": fmt.Sprintf("internal service error: %v", err.Error()),
+			"message": fmt.Sprintf("internal server error: %v", err.Error()),
 		})
 	}
 }
@@ -89,7 +89,7 @@ func (u UserController) PatchUser(c *gin.Context) {
 	objectId, err := primitive.ObjectIDFromHex(c.Param("id"))
 	if err != nil {
 		c.JSON(500, gin.H{
-			"message": fmt.Sprintf("internal service error: %v", err.Error()),
+			"message": fmt.Sprintf("internal server error: %v", err.Error()),
 		})
 		return
 	}
@@ -109,7 +109,7 @@ func (u UserController) PatchUser(c *gin.Context) {
 		})
 	} else {
 		c.JSON(500, gin.H{
-			"message": fmt.Sprintf("internal service error: %v", err.Error()),
+			"message": fmt.Sprintf("internal server error: %v", err.Error()),
 		})
 	}
 }

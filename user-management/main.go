@@ -33,7 +33,7 @@ func App() {
 	routes.UserRoutes(server, userController)
 
 	if err := server.Run(":4000"); err != nil {
-		log.Fatalf("error while creating http service %v", err.Error())
+		log.Fatalf("error while creating http server %v", err.Error())
 	}
 }
 

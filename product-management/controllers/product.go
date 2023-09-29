@@ -26,7 +26,7 @@ func (p ProductController) GetProducts(c *gin.Context) {
 	products, err := p.Service.GetAll()
 	if err != nil {
 		c.JSON(500, gin.H{
-			"message": fmt.Sprintf("internal service error: %v", err.Error()),
+			"message": fmt.Sprintf("internal server error: %v", err.Error()),
 		})
 		return
 	}
@@ -49,7 +49,7 @@ func (p ProductController) GetProduct(c *gin.Context) {
 	product, err := p.Service.Get(c.Param("id"))
 	if err != nil {
 		c.JSON(500, gin.H{
-			"message": fmt.Sprintf("internal service error: %v", err.Error()),
+			"message": fmt.Sprintf("internal server error: %v", err.Error()),
 		})
 		return
 	}
@@ -69,7 +69,7 @@ func (p ProductController) CreateProduct(c *gin.Context) {
 	created, err := p.Service.Create(&product)
 	if err != nil {
 		c.JSON(500, gin.H{
-			"message": fmt.Sprintf("internal service error: %v", err.Error()),
+			"message": fmt.Sprintf("internal server error: %v", err.Error()),
 		})
 		return
 	}
@@ -95,7 +95,7 @@ func (p ProductController) PatchProduct(c *gin.Context) {
 	objectId, err := primitive.ObjectIDFromHex(c.Param("id"))
 	if err != nil {
 		c.JSON(500, gin.H{
-			"message": fmt.Sprintf("internal service error: %v", err.Error()),
+			"message": fmt.Sprintf("internal server error: %v", err.Error()),
 		})
 		return
 	}
@@ -115,7 +115,7 @@ func (p ProductController) PatchProduct(c *gin.Context) {
 		})
 	} else {
 		c.JSON(500, gin.H{
-			"message": fmt.Sprintf("internal service error: %v", err.Error()),
+			"message": fmt.Sprintf("internal server error: %v", err.Error()),
 		})
 	}
 }
@@ -133,7 +133,7 @@ func (p ProductController) DeleteProduct(c *gin.Context) {
 	err := p.Service.Delete(c.Param("id"))
 	if err != nil {
 		c.JSON(500, gin.H{
-			"message": fmt.Sprintf("internal service error: %v", err.Error()),
+			"message": fmt.Sprintf("internal server error: %v", err.Error()),
 		})
 		return
 	}

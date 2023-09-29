@@ -15,5 +15,4 @@ An e-commerce multiple microservices application build using Go-Gin framework an
         - 'make up' to launch all microservices
         - 'make down' to stop all docker containers.
 
-        Note 'order-management' service not supported yet.
-
+        Note 'order-management' service not supported by docker compose yet.
